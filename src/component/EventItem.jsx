@@ -1,9 +1,12 @@
 import '../css/EventItem.css'
 
-const EventItem = ({data}) => {
+const EventItem = ({event}) => {
+
     return (
         <div className="itemWrapper">
-            <p>{data.description}</p>
+            <p>{event.user} had a {event.type} with {event.client}</p>
+            <p>{event.note}</p>
+            <p>{event.type}</p>
         </div>
     )
 }

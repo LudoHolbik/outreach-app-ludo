@@ -1,11 +1,13 @@
 import { useState } from "react"
+import EventList from "./EventList"
 
 const EventForm = () => {
 
     const [ itemsArray, setItemsArray ] = useState([{
+        user: 'You',
+        client: 'John Doe',
         note: 'test note',
         type: 'drink',
-        user: 'John Doe',
         timestamp: '',
     }])
 
@@ -24,6 +26,8 @@ const EventForm = () => {
         console.log(itemsArray,'itemsData1')
         // setItemsData({...itemsData}, note)
         setItemsArray([...itemsArray, {
+            user: 'You',
+            client: 'John Doe',
             note: note,
             type: type
 
@@ -34,25 +38,22 @@ const EventForm = () => {
 
     console.log(itemsArray,'itemsData3')
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <label>
                 note
             <input type="text" value={note} onChange={(e) => setNote(e.target.value)}/>
             </label>
-
-            <select value={type} onChange={(e)=>setType(e.target.value)} id="eventType">
-                <option value="note">note</option>
-                <option value="coffee">coffee</option>
-                <option value="meeting">meeting</option>
-                <option value="beer">beer</option>
-            </select>
-
-
-
+            <div onChange={(e)=>setType(e.target.value)}>
+                <input type="radio" name="type" id="coffee" value="coffee" />
+                <input type="radio" name="type" id="meeting" value="meeting" />
+                <input type="radio" name="type" id="beer" value="beer" />
+                <input type="radio" name="type" id="note" value="note" />
+            </div>
             <input type="submit" />
-
-            
         </form>
+        <EventList eventData={itemsArray} />
+        </>
     )
 }
 

@@ -1,5 +1,5 @@
 import './App.css';
-import EventList from './component/EventList';
+import EventForm from './component/EventForm';
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
                     Test
                 </p>
             </header>
-                <EventList />
+                <EventForm />
         </div>
     );
 }
