@@ -9,7 +9,7 @@ function App() {
                     Test
                 </p>
             </header>
-                <EventForm />
+            <EventForm className="eventForm"/>
         </div>
     );
 }

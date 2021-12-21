@@ -1,0 +1,14 @@
+.formWrapper {
+    background-color: #F6F6F6;
+    max-width: 250px;
+    width: 100%;
+}
+.noteInput {
+    width: 80%;
+    height: 80%;
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+}

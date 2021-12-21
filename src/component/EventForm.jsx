@@ -1,5 +1,6 @@
 import { useState } from "react"
 import EventList from "./EventList"
+import "../css/EventForm.css"
 
 const EventForm = () => {
 
@@ -38,22 +39,21 @@ const EventForm = () => {
 
     console.log(itemsArray,'itemsData3')
     return (
-        <>
-        <form onSubmit={handleSubmit}>
-            <label>
-                note
-            <input type="text" value={note} onChange={(e) => setNote(e.target.value)}/>
-            </label>
-            <div onChange={(e)=>setType(e.target.value)}>
-                <input type="radio" name="type" id="coffee" value="coffee" />
-                <input type="radio" name="type" id="meeting" value="meeting" />
-                <input type="radio" name="type" id="beer" value="beer" />
-                <input type="radio" name="type" id="note" value="note" />
-            </div>
-            <input type="submit" />
-        </form>
-        <EventList eventData={itemsArray} />
-        </>
+        <div>
+            <form className="formWrapper" onSubmit={handleSubmit}>
+                <input className="noteInput" type="text" placeholder="Add a note about Milton Romaguera..." value={note} onChange={(e) => setNote(e.target.value)}/>
+                <div className="bottomSection">
+                    <div onChange={(e)=>setType(e.target.value)}>
+                        <input type="radio" name="type" id="coffee" value="coffee" />
+                        <input type="radio" name="type" id="meeting" value="meeting" />
+                        <input type="radio" name="type" id="beer" value="beer" />
+                        <input type="radio" name="type" id="note" value="note" />
+                    </div>
+                    <input type="submit" />
+                </div>
+            </form>
+            <EventList eventData={itemsArray} />
+        </div>
     )
 }
 
